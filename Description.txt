@@ -1,0 +1,49 @@
+Emotion Recognition System Using Deep Learning
+Overview
+This project implements an emotion recognition system that analyzes audio signals to classify emotions. The system utilizes machine learning techniques, specifically Support Vector Machines (SVM), to classify emotions based on extracted audio features. The code supports two datasets: the Berlin dataset and the Dafex dataset.
+
+Features
+Dataset Handling: The system can load and preprocess audio datasets, organizing them into training and testing sets.
+Feature Extraction: Audio features are extracted using the pyAudioAnalysis library, which computes statistical features such as mean and standard deviation.
+Model Training: The system employs SVM for classification, with cross-validation techniques to evaluate model performance.
+Performance Metrics: The model's performance is assessed using accuracy, precision, and recall metrics for each emotion class.
+Preprocessing: The code includes a preprocessing step that standardizes features and applies Principal Component Analysis (PCA) for dimensionality reduction.
+Eigenspectrum Visualization: The system visualizes the eigenvalues of the covariance matrix of the features, providing insights into the importance of each principal component.
+Datasets
+Berlin Dataset: A well-known dataset for emotion recognition that contains recordings of various emotions spoken by different speakers.
+Dafex Dataset: A dataset that includes audio extracted from video files, containing multiple emotions expressed by actors.
+Requirements
+Python 2.x or 3.x
+Libraries:
+pyAudioAnalysis
+scikit-learn
+numpy
+scipy
+matplotlib
+ffmpeg: Required for audio extraction from video files in the Dafex dataset.
+Usage
+To run the emotion recognition system, execute the script from the command line with the desired options. For example:
+
+bash
+
+Verify
+
+Open In Editor
+Run
+Copy code
+python emotion_recognition.py --dataset berlin --dataset_path /path/to/berlin/dataset --load_data --extract_features
+Command-Line Options
+-d, --dataset: Specify the dataset type (berlin or dafex).
+-p, --dataset_path: Path to the dataset directory.
+-l, --load_data: Load data from the dataset.
+-e, --extract_features: Extract features from the audio data.
+-s, --speaker_indipendence: Enable speaker independence during evaluation.
+-i, --plot_eigenspectrum: Plot the eigenspectrum of the features.
+Performance Evaluation
+The system evaluates the model using cross-validation, providing metrics such as:
+
+Accuracy: Overall correctness of the model.
+Precision: The ratio of true positive predictions to the total predicted positives for each class.
+Recall: The ratio of true positive predictions to the total actual positives for each class.
+Conclusion
+This emotion recognition system serves as a foundation for further research and development in the field of audio signal processing and emotion classification. It can be extended with more advanced deep learning techniques, such as Convolutional Neural Networks (CNNs) or Recurrent Neural Networks (RNNs), for improved performance.
